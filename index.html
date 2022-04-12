@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
 <nav>
-      <h2 id="logo">Ada Lovelace</h2>
+      <h2 id="logo">Benedictus Daniel P See</h2>
       <ul class="navigation-items">
         <li class="navigation-item"><a href="#about-me">About Me</a></li>
         <li class="navigation-item"><a href="#projects">Projects</a></li>
         <li class="navigation-item"><a href="#skills">Skills</a></li>
         <li class="navigation-item"><a href="/contact.html">Contact</a></li>
       </ul>
-    </nav>a
+    </nav>
 
     <main>
       <section id="about-me">
@@ -22,24 +23,22 @@
           <div class="about-me-text-container">
             <h2>About Me</h2>
             <p>
-              Hi! I'm Ada, Countess of Lovelace and am an English mathematician
-              and writer, chiefly known for my work on Charles Babbage's
-              proposed mechanical general-purpose computer, the Analytical
-              Engine.
+              Hey, I'm Ben/Beno and I'm an accounting and finance professional 
+              with 2+ years of professional experience. I graduated with a master's
+              degree in Financial Management and bachelor's degree in Accounting.
             </p>
             <p>
-              I am one of the first to recognize that machines have applications
-              beyond pure calculation, and to have published the first algorithm
-              intended to be carried out by such a machine.
+              I've been learning how to code since February 2021, but decided to get
+              serious with it starting February 2022. I'm currently learning Web Development,
+              Data Science, and Game Development.
             </p>
             <p>
-              In my free time I like to read about scientific developments,
-              mathematics, and computational mathematics. I also like to take my
-              chances of winning big.
+              In my free time I like to watch anime, refactor my codes, and research
+              the latest tech trends. I also enjoy sightseeing, travel, and eating good 
+              food.
             </p>
             <p>
-              Fun fact! I've been programing for
-              <span id="time-container">0</span> seconds!
+              Fun fact! I've been programing for <span id="time-container">0</span> seconds!
             </p>
           </div>
           <img
@@ -117,7 +116,22 @@
         </div>
       </section>
     </main>
-
     <footer>Made with <span class="heart">♥</span> in London</footer>
   </body>
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const START_DAY = "02-06-2021";
+    const START_DAY_DATE = new Date(START_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - START_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
+
 </html>
